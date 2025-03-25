@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空瓶记 - 您的美妆管理助手</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --tertiary-color: #fd79a8;
+            --background-color: #f8f8f8;
+            --text-color: #333;
+            --text-secondary: #666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            background-image: linear-gradient(to bottom, #ffffff, #ffffff, rgba(108, 92, 231, 0.1));
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 20px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.2);
+        }
+        
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary-color), var(--primary-color) 80%);
+            color: white;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+        }
+        
+        .features {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .features h2 {
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .feature-item {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .feature-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-info p {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+        
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        footer {
+            background-color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+            border-top: 1px solid rgba(108, 92, 231, 0.1);
+        }
+        
+        .footer-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+            }
+            
+            .hero-text, .hero-image {
+                width: 100%;
+                padding: 20px 0;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">空瓶记</div>
+            <div class="tagline">您的美妆管理助手</div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-text">
+                        <h1>告别过期烦恼<br>轻松管理美妆产品</h1>
+                        <p>空瓶记是一款专为美妆爱好者设计的应用，帮助您轻松记录每款产品的开瓶日期、保质期和使用情况，让美妆管理更加简单。</p>
+                        <a href="#download" class="cta-button">立即下载</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="OnboardingImage.png" alt="空瓶记App界面">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="features">
+            <div class="container">
+                <h2>核心功能</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">⏱️</div>
+                        <h3 class="feature-title">智能倒计时提醒</h3>
+                        <p>精准显示剩余使用天数，让您不再担心错过最佳使用期。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📅</div>
+                        <h3 class="feature-title">直观日历视图</h3>
+                        <p>一目了然地展示开瓶和空瓶日期，轻松跟踪每款产品的使用历程。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">数据统计分析</h3>
+                        <p>通过图表展示各品类使用情况和消费趋势，辅助理性购买决策。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🏷️</div>
+                        <h3 class="feature-title">分类标签筛选</h3>
+                        <p>快速定位需要关注的产品，提高美妆管理效率。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⭐</div>
+                        <h3 class="feature-title">空瓶评价记录</h3>
+                        <p>为已用完产品添加评分和回购意愿，沉淀真实使用体验。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔔</div>
+                        <h3 class="feature-title">即将过期提醒</h3>
+                        <p>优先展示需要注意的产品，避免浪费和过期风险。</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <p>联系开发者: <a href="mailto:cang.chen@foxmail.com">cang.chen@foxmail.com</a></p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="download" class="download" style="text-align: center; padding: 80px 0;">
+            <div class="container">
+                <h2 style="font-size: 32px; margin-bottom: 30px; color: var(--primary-color);">立即体验空瓶记</h2>
+                <p style="max-width: 600px; margin: 0 auto 40px;">让美妆管理更简单，消费更理性</p>
+                <a href="https://apps.apple.com/" class="cta-button" style="margin-right: 20px;">
+                    App Store 下载
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="mailto:cang.chen@foxmail.com">联系我们</a>
+                <a href="privacy.html">隐私政策</a>
+            </div>
+            <div class="copyright">
+                © 2025 空瓶记 版权所有
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
